@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Случайное изображение</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            max-height: 80vh;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img id="randomImage" alt="Случайное изображение">
+    </div>
+
+    <script>
+        // Массив с путями к изображениям
+        const images = [
+            'https://example.com/image1.jpg',
+            'https://example.com/image2.jpg',
+            'https://example.com/image3.jpg',
+            'https://example.com/image4.jpg'
+        ];
+        
+        // Функция для получения случайного изображения
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
+        }
+        
+        // Устанавливаем случайное изображение при загрузке страницы
+        document.getElementById('randomImage').src = getRandomImage();
+    </script>
+</body>
+</html>
